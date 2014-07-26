@@ -3,9 +3,9 @@ var pg = require('pg');
 var db = {};
 
 db.config = {
-  database: "social_app",
-  host: "localhost",
-  port: "5432"
+  database: 'social_app',
+  host: 'localhost',
+  port: '5432'
 }
 
 db.connect = function(callback) {
