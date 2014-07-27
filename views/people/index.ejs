@@ -3,9 +3,9 @@
   <head>
   </head>
   <body>
-    <h1>People Index</h1>
+    <h1>News Feed</h1>
     <% people.forEach(function(person) { %>
-      <p><%= person.firstname %> <%= person.lastname %></p>
+      <p><a href="/people/<%= person.id %>"><%= person.firstname %> <%= person.lastname %></a></p>
     <% }); %>
   </body>
 </html>

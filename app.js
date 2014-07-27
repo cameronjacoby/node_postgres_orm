@@ -22,7 +22,7 @@ app.get('/people', function(req, res) {
   });
 });
 
-///// NOT DONE /////
+// renders the sign up page (form creates a new person)
 app.get('/people/new', function(req, res) {
   res.render('people/new')
 });
@@ -39,24 +39,63 @@ app.get('/people/:id', function(req,res) {
   });
 });
 
-///// NOT DONE /////
+// displays the edit form with the found person's info pre-filled
 app.get('/people/:id/edit', function(req,res) {
-  res.render('people/edit', {person: {} });
+  personId = req.params.id;
+  Person.findBy('id', personId, function(err, person) {
+    if (err) {
+      console.error('ERROR!!!', err);
+    } else {
+      res.render('people/edit', {person: person});
+    }
+  })
 });
 
-///// NOT DONE /////
+// creates a new person and posts to the /people page
 app.post('/people', function(req, res) {
-  res.redirect('/people')
+  newPerson = Person.create(req.body, function(err, newPerson) {
+    if (err) {
+      console.error('ERROR!!!', err);
+    } else {
+      res.redirect('/people');
+    }
+  });
 });
 
 ///// NOT DONE /////
 app.delete('/people/:id', function(req, res) {
-  res.redirect('/people');
+  personId = req.params.id;
+  Person.findBy('id', personId, function(err, person) {
+    if (err) {
+      console.error('ERROR!!!', err);
+    } else {
+      person.destroy(function(err) {
+        if (err) {
+          console.error('ERROR!!!', err);
+        } else {
+          res.redirect('/people');
+        }
+      });
+    }
+  });
 });
 
-///// NOT DONE /////
+// updates the person's info on submit of edit form
 app.put('/people/:id', function(req,res) {
-  res.redirect('/people');
+  personId = req.params.id;
+  Person.findBy('id', personId, function(err, person) {
+    if (err) {
+      console.error('ERROR!!!', err);
+    } else {
+      person.update({firstname: req.body.firstname, lastname: req.body.lastname}, function(err, person) {
+        if (err) {
+          console.error('ERROR!!!', err);
+        } else {
+          res.redirect('/people');
+        }
+      });
+    }
+  });
 });
 
 

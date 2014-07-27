@@ -1,8 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
   </head>
   <body>
 
+    <h1>Edit Your Profile</h1>
+    <form method="post" action="/people/<%= person.id %>?_method=put">
+      <p>
+        <label for="first_name"></label>
+        <input type="text" name="firstname" id="first_name" value=<%= person.firstname %>>
+      </p>
+      <p>
+        <label for="last_name"></label>
+        <input type="text" name="lastname" id="last_name" value=<%= person.lastname %>>
+      </p>
+      <p>
+        <label for="status_update"></label>
+        <textarea name="message" id="status_update"value=<%= person.message %>></textarea>
+      </p>
+      <input type="submit" id="submit_button" value="Save Your Profile">
+    </form>
+
+    <h1>Delete Your Profile</h1>
+    <form method="post" action="/people/<%= person.id %>?_method=delete">
+      <button>Delete</button>
+    </form>
   </body>
 </html>
+
+
+
+
