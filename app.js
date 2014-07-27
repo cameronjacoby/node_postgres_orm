@@ -87,7 +87,7 @@ app.put('/people/:id', function(req,res) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      person.update({firstname: req.body.firstname, lastname: req.body.lastname, message: req.body.message}, function(err, person) {
+      person.update({firstname: req.body.firstname, lastname: req.body.lastname, message: req.body.message, icon: req.body.icon}, function(err, person) {
         if (err) {
           console.error('ERROR!!!', err);
         } else {

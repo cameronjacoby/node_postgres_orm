@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <a href="/people/new">Sign Up!</a>
-    <h1>News Feed</h1>
-    <% people.forEach(function(person) { %>
-      <p><a href="/people/<%= person.id %>"><%= person.firstname %> <%= person.lastname %></a>: <em><%= person.message %></em></p>
-    <% }); %>
+    <div class="row">
+      <div class="col-xs-2 col-md-4"></div>
+      <div class="col-xs-8 col-md-4">
+        <h1>News Feed</h1>
+        <table>
+          <% people.forEach(function(person) { %>
+            <tr>
+              <td>
+                <img src="<%= person.icon %>" width="40px">
+              </td>
+              <td>
+                <p><a href="/people/<%= person.id %>"><%= person.firstname %> <%= person.lastname %></a>: <em><%= person.message %></em></p>
+              </td>
+            </tr>
+          <% }); %>
+        </table>
+      </div>
+      <div class="col-xs-2 col-md-4">
+        <a href="/people/new">Sign Up!</a>
+      </div>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>

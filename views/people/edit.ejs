@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <p><a href="/people/">Back to News Feed</a></p>
-    <p><a href="/people/<%= person.id %>">Back to Profile Page</a></p>
+    <div class="row">
+      <div class="col-xs-2 col-md-4">
+        <p><a href="/people/">Back to News Feed</a></p>
+        <p><a href="/people/<%= person.id %>">Back to Profile Page</a></p>
+      </div>
 
-    <h1>Edit Your Profile</h1>
-    <form method="post" action="/people/<%= person.id %>?_method=put">
-      <p><label for="first_name">First Name</label></p>
-      <p><input type="text" name="firstname" id="first_name" value=<%= person.firstname %>></p>
-      <p><label for="last_name">Last Name</label></p>
-      <p><input type="text" name="lastname" id="last_name" value=<%= person.lastname %>></p>
-      <p><label for="status_update">Status Update</label></p>
-      <p><textarea name="message" id="status_update"><%= person.message %></textarea></p>
-      <input type="submit" id="submit_button" value="Save Your Profile">
-    </form>
+      <div class="col-xs-2 col-md-4">
+        <h1>Edit Your Profile</h1>
+        <form method="post" action="/people/<%= person.id %>?_method=put">
+          <p><label for="first_name">First Name</label></p>
+          <p><input type="text" name="firstname" id="first_name" value=<%= person.firstname %>></p>
+          <p><label for="last_name">Last Name</label></p>
+          <p><input type="text" name="lastname" id="last_name" value=<%= person.lastname %>></p>
+          <p><label for="status_update">Profile Photo</label></p>
+          <p><textarea name="icon" id="profile_photo"><%= person.icon %></textarea></p>
+          <p><textarea name="message" id="status_update"><%= person.message %></textarea></p>
+          <input type="submit" id="submit_button" value="Save Your Profile">
+        </form>
+        <h2>Delete Your Profile</h2>
+        <form method="post" action="/people/<%= person.id %>?_method=delete">
+          <button>Delete</button>
+        </form>
+      </div>
 
-    <h2>Delete Your Profile</h2>
-    <form method="post" action="/people/<%= person.id %>?_method=delete">
-      <button>Delete</button>
-    </form>
+      <div class="col-xs-2 col-md-4"></div>
+    </div>   
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
+
+
+
+

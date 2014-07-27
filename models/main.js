@@ -18,7 +18,7 @@ Models.Person.findBy('id', 3, function(err, person) {
     console.error('ERROR!!!', err);
   } else {
     console.log('Found', person);
-    person.update({firstname: 'Mario', lastname: 'Delgado', message: 'Hi, there! I\'m new to this website!'}, function(err, person) {
+    person.update({firstname: 'Mario', lastname: 'Delgado', message: 'Hi, there! I\'m new to this website!', photo: 'http://static.businessinsider.com/image/52e9200069beddde035b3f96/image.jpg'}, function(err, person) {
       if (err) {
         console.error('ERROR!!!', err);
       } else {
@@ -28,7 +28,7 @@ Models.Person.findBy('id', 3, function(err, person) {
   }
 });
 
-Models.Person.create({firstname: 'Donna', lastname: 'Jacoby', message: 'Excited to be a part of this site!'}, function(err, person) {
+Models.Person.create({firstname: 'Donna', lastname: 'Jacoby', message: 'Excited to be a part of this site!', icon: 'http://static.businessinsider.com/image/52e9200269bedd2d7d5b3f9c/image.jpg'}, function(err, person) {
   if (err) {
     console.error('ERROR!!!', err);
   } else {

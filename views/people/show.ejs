@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <a href="/people/">Back to News Feed</a>
-    <h1><%= person.firstname %>'s Profile Page</h1>
-    <p><strong>Full Name:</strong> <%= person.firstname %> <%= person.lastname %></p>
-    <p><strong>Recent Status Update:</strong> <em><%= person.message %></em></p>
-    <a href="/people/<%= person.id %>/edit"><button>Edit Profile</button></a>
+    <div class="row">
+      <div class="col-xs-2 col-md-4">
+        <a href="/people/">Back to News Feed</a>
+      </div>
+      <div class="col-xs-2 col-md-4">
+        <h1><%= person.firstname %>'s Profile Page</h1>
+        <img src="<%= person.icon %>" width="300px">
+        <p><strong>Full Name:</strong> <%= person.firstname %> <%= person.lastname %></p>
+        <p><strong>Recent Status Update:</strong> <em><%= person.message %></em></p>
+        <a href="/people/<%= person.id %>/edit"><button>Edit Profile</button></a>
+      </div>
+      <div class="col-xs-2 col-md-4"></div>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>

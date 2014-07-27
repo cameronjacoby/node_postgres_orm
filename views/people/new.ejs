@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <a href="/people/">Back to News Feed</a>
-    <h1>Sign Up Page</h1>
-    <form method="post" action="/people">
-      <p>
-        <label for="first_name"></label>
-        <input type="text" name="firstname" id="first_name" placeholder="First Name">
-      </p>
-      <p>
-        <label for="last_name"></label>
-        <input type="text" name="lastname" id="last_name" placeholder="Last Name">
-      </p>
-      <p>
-        <label for="status_update"></label>
-        <textarea name="message" id="status_update"placeholder="Update your status"></textarea>
-      </p>
-      <input type="submit" id="submit_button" value="Save Your Profile">
-    </form>
+    <div class="row">
+      <div class="col-xs-2 col-md-4">
+        <a href="/people/">Back to News Feed</a>
+      </div>
+      <div class="col-xs-8 col-md-4">
+        <h1>Sign Up Page</h1>
+        <form method="post" action="/people">
+          <p>
+            <label for="first_name"></label>
+            <input type="text" name="firstname" id="first_name" placeholder="First Name">
+          </p>
+          <p>
+            <label for="last_name"></label>
+            <input type="text" name="lastname" id="last_name" placeholder="Last Name">
+          </p>
+          <p>
+            <label for="profile_photo"></label>
+            <textarea name="icon" id="profile_photo"placeholder="Link to your profile photo"></textarea>
+          </p>
+          <p>
+            <label for="status_update"></label>
+            <textarea name="message" id="status_update"placeholder="Update your status"></textarea>
+          </p>
+          <input type="submit" id="submit_button" value="Save Your Profile">
+        </form>
+      </div>
+      </div>
+      <div class="col-xs-2 col-md-4"></div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
