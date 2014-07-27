@@ -5,7 +5,8 @@
   <body>
     <a href="/people/">Back to News Feed</a>
     <h1><%= person.firstname %>'s Profile Page</h1>
-    <p><%= person.firstname %> <%= person.lastname %></p>
+    <p><strong>Full Name:</strong> <%= person.firstname %> <%= person.lastname %></p>
+    <p><strong>Recent Status Update:</strong> <em><%= person.message %></em></p>
     <a href="/people/<%= person.id %>/edit"><button>Edit Profile</button></a>
   </body>
 </html>

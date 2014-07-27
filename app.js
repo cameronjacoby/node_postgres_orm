@@ -62,7 +62,7 @@ app.post('/people', function(req, res) {
   });
 });
 
-///// NOT DONE /////
+// deletes the person
 app.delete('/people/:id', function(req, res) {
   personId = req.params.id;
   Person.findBy('id', personId, function(err, person) {
@@ -87,7 +87,7 @@ app.put('/people/:id', function(req,res) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      person.update({firstname: req.body.firstname, lastname: req.body.lastname}, function(err, person) {
+      person.update({firstname: req.body.firstname, lastname: req.body.lastname, message: req.body.message}, function(err, person) {
         if (err) {
           console.error('ERROR!!!', err);
         } else {

@@ -13,12 +13,12 @@ Models.Person.all(function(err, people) {
   }
 });
 
-Models.Person.findBy('id', 5, function(err, person) {
+Models.Person.findBy('id', 3, function(err, person) {
   if (err) {
     console.error('ERROR!!!', err);
   } else {
     console.log('Found', person);
-    person.update({firstname: 'Wesley', lastname: 'Snipes'}, function(err, person) {
+    person.update({firstname: 'Mario', lastname: 'Delgado', message: 'Hi, there! I\'m new to this website!'}, function(err, person) {
       if (err) {
         console.error('ERROR!!!', err);
       } else {
@@ -28,7 +28,7 @@ Models.Person.findBy('id', 5, function(err, person) {
   }
 });
 
-Models.Person.create({firstname: 'Elizabeth', lastname: 'Lemon'}, function(err, person) {
+Models.Person.create({firstname: 'Donna', lastname: 'Jacoby', message: 'Excited to be a part of this site!'}, function(err, person) {
   if (err) {
     console.error('ERROR!!!', err);
   } else {
@@ -36,7 +36,7 @@ Models.Person.create({firstname: 'Elizabeth', lastname: 'Lemon'}, function(err, 
   }
 });
 
-Models.Person.findBy('id', 10, function(err, person) {
+Models.Person.findBy('id', 5, function(err, person) {
   if (err) {
     console.error('ERROR!!!', err);
   } else {

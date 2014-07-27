@@ -3,6 +3,7 @@ var db = require('./db');
 function Person(params) {
   this.firstname = params.firstname;
   this.lastname = params.lastname;
+  this.message = params.message;
   this.id = params.id;
 };
 
@@ -13,7 +14,6 @@ Person.all = function(callback){
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      console.log(res.rows);
       res.rows.forEach(function(personParams) {
         allPeople.push(new Person(personParams));
       });
@@ -30,11 +30,7 @@ Person.findBy = function(key, val, callback) {
       console.error('ERROR!!!', err);
     } else {
       foundRow = res.rows[0];
-      console.log('This is the found row');
-      console.log(foundRow);
       foundPerson = new Person(foundRow);
-      console.log('This is the found person');
-      console.log(foundPerson);
       callback(err, foundPerson);
     }
   });
@@ -42,17 +38,13 @@ Person.findBy = function(key, val, callback) {
 
 
 Person.create = function(params, callback) {
-  db.query('INSERT INTO people (firstname, lastname) VALUES ($1, $2) RETURNING *', [params.firstname, params.lastname], function(err, res) {
+  db.query('INSERT INTO people (firstname, lastname, message) VALUES ($1, $2, $3) RETURNING *', [params.firstname, params.lastname, params.message], function(err, res) {
     var createdRow, newPerson;
     if (err) {
       console.error('ERROR!!!', err);
     } else {
       createdRow = res.rows[0];
-      console.log('This is the created row');
-      console.log(createdRow);
       newPerson = new Person(createdRow);
-      console.log('This is the new person');
-      console.log(newPerson);
       callback(err, newPerson);
     }
   });
@@ -86,6 +78,7 @@ Person.prototype.update = function(params, callback) {
       updatedRow = res.rows[0];
       _this.firstname = updatedRow.firstname;
       _this.lastname = updatedRow.lastname;
+      _this.message = updatedRow.message;
     }
     callback(err, _this);
   });
