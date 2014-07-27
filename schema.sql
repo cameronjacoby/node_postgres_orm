@@ -12,8 +12,6 @@ CREATE TABLE IF NOT EXISTS people (
 );
 
 INSERT INTO people (firstname, lastname) VALUES ('Cameron', 'Jacoby');
-INSERT INTO people (firstname, lastname) VALUES ('Steph', 'Monette');
-
 
 \d+ people
 \q
