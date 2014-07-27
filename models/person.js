@@ -11,7 +11,7 @@ Person.all = function(callback){
   db.query('SELECT * FROM people',[], function(err, res) {
     var allPeople = [];
     if (err) {
-      console.log('ERROR!!!', err);
+      console.error('ERROR!!!', err);
     } else {
       console.log(res.rows);
       res.rows.forEach(function(personParams) {
@@ -27,7 +27,7 @@ Person.findBy = function(key, val, callback) {
   db.query('SELECT * FROM people WHERE ' + key + '=$1', [val], function(err, res) {
     var foundRow, foundPerson;
     if (err) {
-      console.log('ERROR!!!', err);
+      console.error('ERROR!!!', err);
     } else {
       foundRow = res.rows[0];
       console.log('This is the found row');
@@ -45,7 +45,7 @@ Person.create = function(params, callback) {
   db.query('INSERT INTO people (firstname, lastname) VALUES ($1, $2) RETURNING *', [params.firstname, params.lastname], function(err, res) {
     var createdRow, newPerson;
     if (err) {
-      console.log('ERROR!!!', err);
+      console.error('ERROR!!!', err);
     } else {
       createdRow = res.rows[0];
       console.log('This is the created row');
@@ -95,7 +95,7 @@ Person.prototype.update = function(params, callback) {
 Person.prototype.destroy = function(callback) {
   db.query('DELETE FROM people WHERE id=$1', [this.id], function(err, res) {
     if (err) {
-      console.log('ERROR!!!', err);
+      console.error('ERROR!!!', err);
     } else {
       console.log(res);
       callback(err);
