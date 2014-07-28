@@ -40,3 +40,28 @@ And a `prototype` method for `update`. Refactor your code so that `Person` will 
 
 ##Resources
 * [PGCommander](https://eggerapps.at/pgcommander/)
+
+
+--------------------
+
+### Completed project:
+
+#### News Feed
+
+![ScreenShot](/public/images/screenshot_feed.png)
+
+#### Sign Up Page
+
+![ScreenShot](/public/images/screenshot_new.png)
+
+#### Profile Page
+
+![ScreenShot](/public/images/screenshot_profile.png)
+
+#### Edit Profile
+
+![ScreenShot](/public/images/screenshot_edit.png)
+
+
+
+

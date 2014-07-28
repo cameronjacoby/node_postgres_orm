@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
 body {
   background-color: rgba(222, 231, 231, 1);
 }
@@ -11,6 +13,7 @@ h2 {
   margin-top: 20px;
   margin-bottom: 30px;
   color: rgba(252, 70, 7, 1);
+  font-family: Lato;
 }
 
 h3, p {
@@ -19,11 +22,7 @@ h3, p {
 
 h3 {
   color: rgba(252, 70, 7, 1);
-}
-
-a:hover {
-  text-decoration: none;
-  color: rgba(213, 249, 3, 1);
+  font-family: Lato;
 }
 
 td {
@@ -50,6 +49,11 @@ td {
 #status {
   float: left;
   margin-top: 4px;
+}
+
+#status a:hover {
+  text-decoration: none;
+  background-color: rgba(213, 249, 3, 1);
 }
 
 #circle_image {
