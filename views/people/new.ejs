@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Social Sharing App</title>
+    <link rel="shortcut icon" href="" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
     <div class="row">
       <div class="col-xs-2 col-md-4">
         <a href="/people/">Back to News Feed</a>
       </div>
-      <div class="col-xs-8 col-md-4">
-        <h1>Sign Up Page</h1>
+      <div class="col-xs-8 col-md-4 center_column">
+        <h2>Sign Up Page</h2>
         <form method="post" action="/people">
           <p>
             <label for="first_name"></label>
@@ -21,13 +24,21 @@
           </p>
           <p>
             <label for="profile_photo"></label>
-            <textarea name="icon" id="profile_photo"placeholder="Link to your profile photo"></textarea>
+            <textarea name="icon" id="profile_photo" placeholder="Link to your profile photo"></textarea>
+          </p>
+          <p>
+            <label for="facebook_url"></label>
+            <textarea name="facebook" id="facebook_url" placeholder="Link to your Facebook page"></textarea>
+          </p>
+          <p>
+            <label for="twitter_url"></label>
+            <textarea name="twitter" id="twitter_url" placeholder="Link to your Twitter page"></textarea>
           </p>
           <p>
             <label for="status_update"></label>
-            <textarea name="message" id="status_update"placeholder="Update your status"></textarea>
+            <textarea name="message" id="status_update" placeholder="Update your status"></textarea>
           </p>
-          <input type="submit" id="submit_button" value="Save Your Profile">
+          <input type="submit" id="new_profile" value="Save Your Profile">
         </form>
       </div>
       </div>
@@ -35,3 +46,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
+
+
+
+

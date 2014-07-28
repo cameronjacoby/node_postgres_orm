@@ -10,6 +10,8 @@ CREATE TABLE IF NOT EXISTS people (
   lastname varchar(25),
   message varchar(140),
   icon text,
+  facebook varchar(140),
+  twitter varchar(140),
   created_at TIMESTAMP NOT NULL DEFAULT now()
 );
 

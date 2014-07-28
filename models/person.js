@@ -5,6 +5,8 @@ function Person(params) {
   this.lastname = params.lastname;
   this.message = params.message;
   this.icon = params.icon,
+  this.facebook = params.facebook;
+  this.twitter = params.twitter;
   this.id = params.id;
 };
 
@@ -39,7 +41,7 @@ Person.findBy = function(key, val, callback) {
 
 
 Person.create = function(params, callback) {
-  db.query('INSERT INTO people (firstname, lastname, message, icon) VALUES ($1, $2, $3, $4) RETURNING *', [params.firstname, params.lastname, params.message, params.icon], function(err, res) {
+  db.query('INSERT INTO people (firstname, lastname, message, icon, facebook, twitter) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *', [params.firstname, params.lastname, params.message, params.icon, params.facebook, params.twitter], function(err, res) {
     var createdRow, newPerson;
     if (err) {
       console.error('ERROR!!!', err);
@@ -81,6 +83,8 @@ Person.prototype.update = function(params, callback) {
       _this.lastname = updatedRow.lastname;
       _this.message = updatedRow.message;
       _this.icon = updatedRow.icon;
+      _this.facebook = updatedRow.facebook;
+      _this.twitter = updatedRow.twitter;
     }
     callback(err, _this);
   });

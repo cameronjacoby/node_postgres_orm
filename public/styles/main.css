@@ -1,0 +1,37 @@
+body {
+  background-color: rgba(222, 231, 231, 1);
+}
+
+.center_column {
+  min-height: 800px;
+  background-color: rgba(255, 255, 255, .8);
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-top: 40px;
+}
+
+button, #new_profile, #edit_profile {
+  margin-top: 10px;
+}
+
+td {
+  padding-bottom: 20px;
+}
+
+.icon_image {
+  height: 40px;
+  border: 1px solid rgba(222, 231, 231, 1);
+  margin-right: 10px;
+}
+
+.profile_image {
+  width: 300px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(222, 231, 231, 1);
+}

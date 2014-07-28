@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Social Sharing App</title>
+    <link rel="shortcut icon" href="" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
   </head>
   <body>
     <div class="row">
       <div class="col-xs-2 col-md-4"></div>
-      <div class="col-xs-8 col-md-4">
-        <h1>News Feed</h1>
-        <table>
-          <% people.forEach(function(person) { %>
-            <tr>
-              <td>
-                <img src="<%= person.icon %>" width="40px">
-              </td>
-              <td>
-                <p><a href="/people/<%= person.id %>"><%= person.firstname %> <%= person.lastname %></a>: <em><%= person.message %></em></p>
-              </td>
-            </tr>
-          <% }); %>
-        </table>
-      </div>
+      
+        <div class="col-xs-8 col-md-4 center_column">
+          <h2>News Feed</h2>
+          <table>
+            <% people.forEach(function(person) { %>
+              <tr>
+                <td>
+                  <img class="icon_image" src="<%= person.icon %>" >
+                  <a href="/people/<%= person.id %>"><%= person.firstname %> <%= person.lastname %></a>: <em><%= person.message %></em>
+                </td>
+              </tr>
+            <% }); %>
+          </table>
+        </div>
+
       <div class="col-xs-2 col-md-4">
+        <button type="button" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-align-justify"></span>
+        </button>
         <a href="/people/new">Sign Up!</a>
       </div>
     </div>

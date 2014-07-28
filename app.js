@@ -9,6 +9,7 @@ app.set('view engine', 'ejs');
 // middleware
 app.use(bodyParser.urlencoded());
 app.use(methodOverride('_method'));
+app.use(express.static(__dirname + '/public'));
 
 
 // displays all people in the database on the index page
@@ -87,7 +88,7 @@ app.put('/people/:id', function(req,res) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      person.update({firstname: req.body.firstname, lastname: req.body.lastname, message: req.body.message, icon: req.body.icon}, function(err, person) {
+      person.update({firstname: req.body.firstname, lastname: req.body.lastname, message: req.body.message, icon: req.body.icon, facebook: req.body.facebook, twitter: req.body.twitter}, function(err, person) {
         if (err) {
           console.error('ERROR!!!', err);
         } else {
