@@ -10,14 +10,16 @@ body {
 h2 {
   margin-top: 20px;
   margin-bottom: 20px;
+  color: rgba(252, 70, 7, 1);
 }
 
-h3 {
-  margin-top: 40px;
+a {
+  color: rgba(12, 157, 160, 1);
+  text-decoration: bold;
 }
 
-button, #new_profile, #edit_profile {
-  margin-top: 10px;
+button {
+  margin-top: 20px;
 }
 
 td {
@@ -25,7 +27,7 @@ td {
 }
 
 .icon_image {
-  height: 40px;
+  width: 40px;
   border: 1px solid rgba(222, 231, 231, 1);
   margin-right: 10px;
 }
@@ -35,3 +37,11 @@ td {
   margin-bottom: 30px;
   border: 1px solid rgba(222, 231, 231, 1);
 }
+
+.dropdown-toggle {
+  margin-top: 15px;
+}
+
+
+
+

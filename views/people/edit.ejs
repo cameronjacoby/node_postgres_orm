@@ -8,25 +8,40 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-xs-2 col-md-4">
-        <p><a href="/people/">Back to News Feed</a></p>
-        <p><a href="/people/<%= person.id %>">Back to Profile Page</a></p>
-      </div>
+      <div class="col-xs-2 col-md-4"></div>
 
       <div class="col-xs-8 col-md-4 center_column">
         <h2>Edit Your Profile</h2>
-        <form method="post" action="/people/<%= person.id %>?_method=put">
-          <p><label for="first_name">First Name</label></p>
-          <p><input type="text" name="firstname" id="first_name" placeholder="First Name" value=<%= person.firstname %>></p>
 
-          <p><label for="last_name">Last Name</label></p>
-          <p><input type="text" name="lastname" id="last_name" placeholder="Last Name" value=<%= person.lastname %>></p>
+        <form method="post" action="/people/<%= person.id %>?_method=put" class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="first_name" class="col-sm-3 control-label">First Name</label>
+            <div class="col-sm-9">
+              <input type="text" name="firstname" id="first_name" class="form-control" placeholder="First Name" value=<%= person.firstname %>>
+            </div>
+          </div>
 
-          <p><label for="profile_photo">Profile Photo</label></p>
-          <p><textarea name="icon" id="profile_photo" placeholder="Link to your profile photo"><%= person.icon %></textarea></p>
+          <div class="form-group">
+            <label for="last_name" class="col-sm-3 control-label">Last Name</label>
+            <div class="col-sm-9">
+              <input type="text" name="lastname" id="last_name" class="form-control" placeholder="Last Name" value=<%= person.lastname %>>
+            </div>
+          </div>
 
-          <p><label for="facebook_url">Facebook Profile</label></p>
-          <p><input type="text" name="facebook" id="facebook_url" placeholder="Link to your Facebook page" <% if (person.facebook && person.facebook !== "null") { %> value=<%= person.facebook %> <% } %>></p>
+          <div class="form-group">
+            <label for="profile_photo" class="col-sm-3 control-label">Photo</label>
+            <div class="col-sm-9">
+              <input type="text" name="icon" id="profile_photo" class="form-control" placeholder="Link to your profile photo" value=<%= person.icon %>>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="facebook_url" class="col-sm-3 control-label">Facebook</label>
+            <div class="col-sm-9">
+              <input type="text" name="facebook" id="facebook_url" class="form-control" placeholder="Link to your Facebook page" <% if (person.facebook && person.facebook !== "null") { %> value=<%= person.facebook %> <% } %>>
+            </div>
+          </div>
+
 
           <p><label for="twitter_url">Twitter Profile</label></p>
           <p><input type="text" name="twitter" id="twitter_url" placeholder="Link to your Twitter page" <% if (person.twitter && person.twitter !== "null") { %> value=<%= person.twitter %> <% } %>></p>
@@ -37,15 +52,26 @@
           <input type="submit" id="edit_profile" value="Save Your Profile">
         </form>
 
-        <h3>Delete Your Profile</h3>
         <form method="post" action="/people/<%= person.id %>?_method=delete">
-          <button>Delete</button>
+          <button id="delete_profile">Delete Your Profile <div class="glyphicon glyphicon-trash"></div></button>
         </form>
       </div>
 
-      <div class="col-xs-2 col-md-4"></div>
+      <div class="col-xs-2 col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"><span class="glyphicon glyphicon-th-large"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-5" href="/people">News Feed</a>
+            <li role="presentation"><a role="menuitem" tabindex="-5" href="/people/new">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
     </div>   
+    
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>$('.dropdown-toggle').dropdown()</script>
   </body>
 </html>
 

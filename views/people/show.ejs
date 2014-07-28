@@ -8,26 +8,42 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-xs-2 col-md-4">
-        <a href="/people/">Back to News Feed</a>
-      </div>
+      <div class="col-xs-2 col-md-4"></div>
+      
       <div class="col-xs-8 col-md-4 center_column">
-        <h2><%= person.firstname %>'s Profile Page</h2>
+        <h2><%= person.firstname %>'s Profile</h2>
         <img class="profile_image" src="<%= person.icon %>" >
         <p><strong>Full Name:</strong> <%= person.firstname %> <%= person.lastname %></p>
         <p><strong>Recent Status Update:</strong> <em><%= person.message %></em></p>
         
-        <p><% if (person.facebook && person.facebook !== "null") { %>
-          <a href="<%= person.facebook %>" target="blank">Facebook</a>
+        <% if (person.facebook && person.facebook !== "null") { %>
+          <p><a href="<%= person.facebook %>" target="blank">Facebook</a></p>
         <% } %> 
         <% if (person.twitter && person.twitter !== "null") { %> 
-          <a href="<%= person.twitter %>" target="blank">Twitter</a>
-        <% } %></p>
+          <p><a href="<%= person.twitter %>" target="blank">Twitter</a></p>
+        <% } %>
 
         <p><a href="/people/<%= person.id %>/edit"><button>Edit Profile</button></a></p>
       </div>
-      <div class="col-xs-2 col-md-4"></div>
+
+      <div class="col-xs-2 col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"><span class="glyphicon glyphicon-th-large"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-5" href="/people">News Feed</a>
+            <li role="presentation"><a role="menuitem" tabindex="-5" href="/people/new">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>$('.dropdown-toggle').dropdown()</script>
   </body>
 </html>
+
+
+
+

@@ -4,7 +4,7 @@ function Person(params) {
   this.firstname = params.firstname;
   this.lastname = params.lastname;
   this.message = params.message;
-  this.icon = params.icon,
+  this.icon = params.icon;
   this.facebook = params.facebook;
   this.twitter = params.twitter;
   this.id = params.id;
