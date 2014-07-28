@@ -8,10 +8,10 @@ CREATE TABLE IF NOT EXISTS people (
   id serial primary key,
   firstname varchar(25),
   lastname varchar(25),
-  message varchar(140),
+  message varchar(50),
   icon text,
-  facebook varchar(140),
-  twitter varchar(140),
+  facebook varchar(100),
+  twitter varchar(100),
   created_at TIMESTAMP NOT NULL DEFAULT now()
 );
 
