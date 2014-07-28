@@ -42,18 +42,33 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <label for="twitter_url" class="col-sm-3 control-label">Twitter</label>
+            <div class="col-sm-9">
+              <input type="text" name="twitter" id="twitter_url" class="form-control" placeholder="Link to your Twitter page" <% if (person.twitter && person.twitter !== "null") { %> value=<%= person.twitter %> <% } %>>
+            </div>
+          </div>
 
-          <p><label for="twitter_url">Twitter Profile</label></p>
-          <p><input type="text" name="twitter" id="twitter_url" placeholder="Link to your Twitter page" <% if (person.twitter && person.twitter !== "null") { %> value=<%= person.twitter %> <% } %>></p>
+          <div class="form-group">
+            <label for="status_update" class="col-sm-3 control-label">Status</label>
+            <div class="col-sm-9">
+              <input type="text" name="message" id="status_update" class="form-control" placeholder="Update your status">
+            </div>
+          </div>
 
-          <p><label for="status_update">Status Update</label></p>
-          <p><textarea name="message" id="status_update" placeholder="Update your status"><%= person.message %></textarea></p>
-          
-          <input type="submit" id="edit_profile" value="Save Your Profile">
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" class="btn btn-default save_button" >Save Your Profile</button>
+            </div>
+          </div>
         </form>
 
-        <form method="post" action="/people/<%= person.id %>?_method=delete">
-          <button id="delete_profile">Delete Your Profile <div class="glyphicon glyphicon-trash"></div></button>
+        <form method="post" action="/people/<%= person.id %>?_method=delete" class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button class="btn btn-default" id="delete_button">Delete Your Profile <div class="glyphicon glyphicon-trash"></div></button>
+            </div>
+          </div>
         </form>
       </div>
 

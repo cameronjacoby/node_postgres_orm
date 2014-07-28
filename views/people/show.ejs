@@ -13,17 +13,20 @@
       <div class="col-xs-8 col-md-4 center_column">
         <h2><%= person.firstname %>'s Profile</h2>
         <img class="profile_image" src="<%= person.icon %>" >
+        <hr>
+
+        <h3>Details</h3>
         <p><strong>Full Name:</strong> <%= person.firstname %> <%= person.lastname %></p>
         <p><strong>Recent Status Update:</strong> <em><%= person.message %></em></p>
         
-        <% if (person.facebook && person.facebook !== "null") { %>
-          <p><a href="<%= person.facebook %>" target="blank">Facebook</a></p>
+        <div id="social_links"><% if (person.facebook && person.facebook !== "null") { %>
+          <a href="<%= person.facebook %>" target="blank">Facebook</a>
         <% } %> 
         <% if (person.twitter && person.twitter !== "null") { %> 
-          <p><a href="<%= person.twitter %>" target="blank">Twitter</a></p>
-        <% } %>
-
-        <p><a href="/people/<%= person.id %>/edit"><button>Edit Profile</button></a></p>
+          <a href="<%= person.twitter %>" target="blank">Twitter</a>
+        <% } %></div>
+        
+        <a href="/people/<%= person.id %>/edit" class="btn btn-default" id="edit_button" role="button">Edit Profile</a>
       </div>
 
       <div class="col-xs-2 col-md-4">

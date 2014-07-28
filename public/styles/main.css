@@ -13,13 +13,17 @@ h2 {
   color: rgba(252, 70, 7, 1);
 }
 
-a {
-  color: rgba(12, 157, 160, 1);
-  text-decoration: bold;
+h3, p {
+  padding-bottom: 20px;
 }
 
-button {
-  margin-top: 20px;
+h3 {
+  color: rgba(252, 70, 7, 1);
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgba(213, 249, 3, 1);
 }
 
 td {
@@ -33,6 +37,8 @@ td {
 }
 
 .profile_image {
+  display: block;
+  margin: 0 auto;
   width: 300px;
   margin-bottom: 30px;
   border: 1px solid rgba(222, 231, 231, 1);
@@ -42,6 +48,38 @@ td {
   margin-top: 15px;
 }
 
+#social_links {
+  margin-bottom: 25px;
+}
+
+.save_button {
+  background-color: rgba(213, 249, 3, 1);
+  margin-top: 15px;
+}
+
+.save_button:hover, #edit_button:hover, #delete_button:hover {
+  background-color: rgba(229, 229, 229, 1);
+}
+
+#edit_button {
+  background-color: rgba(213, 249, 3, 1);
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
+
+#delete_button {
+  background-color: rgba(252, 70, 7, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+#delete_button:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.glyphicon-trash {
+  margin-left: 5px;
+}
 
 
 
