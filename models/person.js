@@ -8,7 +8,7 @@ function Person(params) {
   this.facebook = params.facebook;
   this.twitter = params.twitter;
   this.id = params.id;
-};
+}
 
 
 Person.all = function(callback){
@@ -34,8 +34,8 @@ Person.findBy = function(key, val, callback) {
     } else {
       foundRow = res.rows[0];
       foundPerson = new Person(foundRow);
-      callback(err, foundPerson);
     }
+    callback(err, foundPerson);
   });
 };
 
@@ -48,8 +48,8 @@ Person.create = function(params, callback) {
     } else {
       createdRow = res.rows[0];
       newPerson = new Person(createdRow);
-      callback(err, newPerson);
     }
+    callback(err, newPerson);
   });
 };
 
@@ -97,13 +97,9 @@ Person.prototype.destroy = function(callback) {
       console.error('ERROR!!!', err);
     } else {
       console.log(res);
-      callback(err);
     }
+    callback(err);
   });
 };
 
 module.exports = Person;
-
-
-
-

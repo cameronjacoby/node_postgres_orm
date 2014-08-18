@@ -10,22 +10,23 @@
     <div class="row">
       <div class="col-xs-2 col-md-4"></div>
       
-        <div class="col-xs-8 col-md-4 center_column">
-          <h2>News Feed</h2>
-          <table>
-            <% people.forEach(function(person) { %>
-              <tr>
-                <td>
-                  <div id="circle_icon"><a href="/people/<%= person.id %>"><img id="icon_image" src="<%= person.icon %>" ></a></div>
-                  <div id="status">
-                    <a href="/people/<%= person.id %>"><%= person.firstname %> <%= person.lastname %></a>:<br>
-                    <em><%= person.message %></em>
-                  </div>
-                </td>
-              </tr>
-            <% }); %>
-          </table>
-        </div>
+      <div class="col-xs-8 col-md-4 center_column">
+        <div id="circle_image"><img id="profile_image" src="<%= person.icon %>" ></div>
+        <hr>
+
+        <h3>Profile Details</h3>
+        <p><strong>Full Name:</strong> <%= person.firstname %> <%= person.lastname %></p>
+        <p><strong>Recent Status Update:</strong> <em><%= person.message %></em></p>
+        
+        <div id="social_links"><% if (person.facebook && person.facebook !== "null") { %>
+          <a href="<%= person.facebook %>" target="blank"><img src="/images/facebook_icon.gif" ></a>
+        <% } %> 
+        <% if (person.twitter && person.twitter !== "null") { %> 
+          <a href="<%= person.twitter %>" target="blank"><img src="/images/twitter_icon.gif" ></a>
+        <% } %></div>
+        
+        <a href="/people/<%= person.id %>/edit" class="btn btn-default" id="edit_button" role="button">Edit Profile</a>
+      </div>
 
       <div class="col-xs-2 col-md-4">
         <div class="dropdown">
@@ -44,10 +45,3 @@
     <script>$('.dropdown-toggle').dropdown()</script>
   </body>
 </html>
-
-
-
-
-
-
-

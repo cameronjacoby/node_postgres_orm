@@ -9,43 +9,43 @@
   <body>
     <div class="row">
       <div class="col-xs-2 col-md-4"></div>
-      
-      <div class="col-xs-8 col-md-4 center_column">
-        <h2>Sign Up</h2>
 
-        <form method="post" action="/people" class="form-horizontal" role="form">
+      <div class="col-xs-8 col-md-4 center_column">
+        <h2>Edit Your Profile</h2>
+
+        <form method="post" action="/people/<%= person.id %>?_method=put" class="form-horizontal" role="form">
           <div class="form-group">
             <label for="first_name" class="col-sm-3 control-label">First Name</label>
             <div class="col-sm-9">
-              <input type="text" name="firstname" id="first_name" class="form-control" placeholder="First Name">
+              <input type="text" name="firstname" id="first_name" class="form-control" placeholder="First Name" value=<%= person.firstname %>>
             </div>
           </div>
 
           <div class="form-group">
             <label for="last_name" class="col-sm-3 control-label">Last Name</label>
             <div class="col-sm-9">
-              <input type="text" name="lastname" id="last_name" class="form-control" placeholder="Last Name">
+              <input type="text" name="lastname" id="last_name" class="form-control" placeholder="Last Name" value=<%= person.lastname %>>
             </div>
           </div>
 
           <div class="form-group">
             <label for="profile_photo" class="col-sm-3 control-label">Photo</label>
             <div class="col-sm-9">
-              <input type="text" name="icon" id="profile_photo" class="form-control" placeholder="Link to your profile photo">
+              <input type="text" name="icon" id="profile_photo" class="form-control" placeholder="Link to your profile photo" value=<%= person.icon %>>
             </div>
           </div>
 
           <div class="form-group">
             <label for="facebook_url" class="col-sm-3 control-label">Facebook</label>
             <div class="col-sm-9">
-              <input type="text" name="facebook" id="facebook_url" class="form-control" placeholder="Link to your Facebook page">
+              <input type="text" name="facebook" id="facebook_url" class="form-control" placeholder="Link to your Facebook page" <% if (person.facebook && person.facebook !== "null") { %> value=<%= person.facebook %> <% } %>>
             </div>
           </div>
 
           <div class="form-group">
             <label for="twitter_url" class="col-sm-3 control-label">Twitter</label>
             <div class="col-sm-9">
-              <input type="text" name="twitter" id="twitter_url" class="form-control" placeholder="Link to your Twitter page">
+              <input type="text" name="twitter" id="twitter_url" class="form-control" placeholder="Link to your Twitter page" <% if (person.twitter && person.twitter !== "null") { %> value=<%= person.twitter %> <% } %>>
             </div>
           </div>
 
@@ -55,10 +55,18 @@
               <input type="text" name="message" id="status_update" class="form-control" placeholder="Update your status">
             </div>
           </div>
-          
+
           <div class="form-group">
             <div class="col-sm-offset-3 col-sm-9">
-              <button type="submit" class="btn btn-default save_button">Save Your Profile</button>
+              <button type="submit" class="btn btn-default save_button" >Save Your Profile</button>
+            </div>
+          </div>
+        </form>
+
+        <form method="post" action="/people/<%= person.id %>?_method=delete" class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button class="btn btn-default" id="delete_button">Delete Your Profile <div class="glyphicon glyphicon-trash"></div></button>
             </div>
           </div>
         </form>
@@ -74,14 +82,10 @@
           </ul>
         </div>
       </div>
-    </div>
-      
+    </div>   
+    
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script>$('.dropdown-toggle').dropdown()</script>
   </body>
 </html>
-
-
-
-

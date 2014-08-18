@@ -52,7 +52,3 @@ Models.Person.findBy('id', 5, function(err, person) {
 });
 
 module.exports = Models;
-
-
-
-

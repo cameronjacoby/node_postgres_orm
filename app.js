@@ -18,24 +18,24 @@ app.get('/people', function(req, res) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      res.render('people/index', {people: allPeople});
+      res.render('index', {people: allPeople});
     }
   });
 });
 
 // renders the sign up page (form creates a new person)
 app.get('/people/new', function(req, res) {
-  res.render('people/new')
+  res.render('new');
 });
 
 // displays a person's profile page
 app.get('/people/:id', function(req,res) {
   personId = req.params.id;
-  Person.findBy('id', personId, function(err, person) {
+  Person.findBy('id', personId, function(err, foundPerson) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      res.render('people/show', {person: person});
+      res.render('show', {person: foundPerson});
     }
   });
 });
@@ -43,13 +43,13 @@ app.get('/people/:id', function(req,res) {
 // displays the edit form with the found person's info pre-filled
 app.get('/people/:id/edit', function(req,res) {
   personId = req.params.id;
-  Person.findBy('id', personId, function(err, person) {
+  Person.findBy('id', personId, function(err, foundPerson) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      res.render('people/edit', {person: person});
+      res.render('edit', {person: foundPerson});
     }
-  })
+  });
 });
 
 // creates a new person and posts to the /people page
@@ -103,7 +103,3 @@ app.put('/people/:id', function(req,res) {
 app.listen(3000, function(){
   console.log('server started on localhost:3000');
 });
-
-
-
-

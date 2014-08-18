@@ -61,7 +61,3 @@ And a `prototype` method for `update`. Refactor your code so that `Person` will 
 #### Edit Profile
 
 ![ScreenShot](/public/images/screenshot_edit.png)
-
-
-
-
