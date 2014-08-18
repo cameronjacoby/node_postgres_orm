@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+        <h2>News Feed</h2>
+        <table>
+          <% people.forEach(function(person) { %>
+            <tr>
+              <td>
+                <div id="circle_icon"><a href="/people/<%= person.id %>"><img id="icon_image" src="<%= person.icon %>" ></a></div>
+                <div id="status">
+                  <a href="/people/<%= person.id %>"><%= person.firstname %> <%= person.lastname %></a>:<br>
+                  <em><%= person.message %></em>
+                </div>
+              </td>
+            </tr>
+          <% }); %>
+        </table>
+      </div>
+
+      <div class="col-xs-2 col-md-4">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"><span class="glyphicon glyphicon-th-large"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li role="presentation"><a role="menuitem" tabindex="-5" href="/people">News Feed</a>
+            <li role="presentation"><a role="menuitem" tabindex="-5" href="/people/new">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>$('.dropdown-toggle').dropdown()</script>
+  </body>
+</html>

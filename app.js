@@ -18,14 +18,14 @@ app.get('/people', function(req, res) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      res.render('index', {people: allPeople});
+      res.render('site/index', {people: allPeople});
     }
   });
 });
 
 // renders the sign up page (form creates a new person)
 app.get('/people/new', function(req, res) {
-  res.render('new');
+  res.render('site/new');
 });
 
 // displays a person's profile page
@@ -35,7 +35,7 @@ app.get('/people/:id', function(req,res) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      res.render('show', {person: foundPerson});
+      res.render('site/show', {person: foundPerson});
     }
   });
 });
@@ -47,7 +47,7 @@ app.get('/people/:id/edit', function(req,res) {
     if (err) {
       console.error('ERROR!!!', err);
     } else {
-      res.render('edit', {person: foundPerson});
+      res.render('site/edit', {person: foundPerson});
     }
   });
 });
